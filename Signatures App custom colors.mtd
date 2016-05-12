@@ -1,39 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<MobileTogetherDesign versionClient="50" versionServer="50" deploymentPath_so="/public/Signatures App" deploymentDescription_so="This app collects and records signatures in a file stored on your MobileTogether Server and lets users review them on the mobile device. The app demonstrates how to resize and standardize signature colors for review even if they were captured on a different platform." deploymentGlobalResourceConfig_so="Default">
+<MobileTogetherDesign versionClient="51" versionServer="51" deploymentPath_so="/public/Signatures App" deploymentDescription_so="60510 16:41 This app collects and records signatures in a file stored on your MobileTogether Server and lets users review them on the mobile device. The app demonstrates how to resize and standardize signature colors for review even if they were captured on a different platform." deploymentGlobalResourceConfig_so="Default">
 	<DesignRoot id="6">
 		<style workflowIcon="sign.png"/>
 		<children>
 			<DesignPage id="7" name="Signatures App">
 				<children>
 					<DesignLabel id="339">
-						<style align="center" margin="4" multiLine="1" name="Label1" text="Signature Demo App" textSize="large" weight="1"/>
+						<style align="center" margin="4px" multiLine="1" name="Label1" text="Signature Demo App" textSize="large" weight="1"/>
 					</DesignLabel>
 					<DesignLabel id="340">
-						<style margin="4" multiLine="1" name="Label2" text_x="&apos;This app collects and records signatures in a file stored on your MobileTogether Server and lets users review them on the mobile device. The app demonstrates how to resize and standardize signature colors for review even if they were captured on a different platform.
+						<style margin="4px" multiLine="1" name="Label2" text_x="&apos;This app collects and records signatures in a file stored on your MobileTogether Server and lets users review them on the mobile device. The app demonstrates how to resize and standardize signature colors for review even if they were captured on a different platform.
 
 Try it for yourself!&apos;" textSize="large"/>
 					</DesignLabel>
 					<DesignButton id="1">
-						<style align="center" backgroundColor="#D7D7DB" margin="20" name="Capture Button" text="Capture New Signature" textColor="blue" textSize="large" weight="1"/>
-						<controlActions id="8" needsClient="0">
+						<style align="center" backgroundColor="#D7D7DB" margin="20px" name="Capture Button" text="Capture New Signature" textColor="blue" textSize="large" weight="1"/>
+						<controlActions id="8">
 							<children>
-								<DesignActionGotoSubpage id="593" needsClient="0" showLoadSubpageMsg="0" showCloseSubpageMsg="0" pageRef="19"/>
+								<DesignActionGotoSubpage id="593" showLoadSubpageMsg="0" showCloseSubpageMsg="0" pageRef="19"/>
 							</children>
 						</controlActions>
 					</DesignButton>
 					<DesignButton id="4">
-						<style align="center" backgroundColor="#D7D7DB" margin="20" name="Review Button" text="Review Signatures" textColor="blue" textSize="large" weight="1"/>
-						<controlActions id="5" needsClient="0">
+						<style align="center" backgroundColor="#D7D7DB" margin="20px" name="Review Button" text="Review Signatures" textColor="blue" textSize="large" weight="1"/>
+						<controlActions id="5">
 							<children>
-								<DesignActionGotoSubpage id="247" needsClient="0" showLoadSubpageMsg="0" showCloseSubpageMsg="0" pageRef="138"/>
+								<DesignActionGotoSubpage id="247" showLoadSubpageMsg="0" showCloseSubpageMsg="0" pageRef="138"/>
 							</children>
 						</controlActions>
 					</DesignButton>
 					<DesignButton id="557">
-						<style align="center" backgroundColor="#D7D7DB" margin="20" name="Review Button1" text="Customize Colors" textColor="blue" textSize="large" weight="1"/>
-						<controlActions id="558" needsClient="0">
+						<style align="center" backgroundColor="#D7D7DB" margin="20px" name="Review Button1" text="Customize Colors" textColor="blue" textSize="large" weight="1"/>
+						<controlActions id="558">
 							<children>
-								<DesignActionGotoSubpage id="564" needsClient="0" showLoadSubpageMsg="0" showCloseSubpageMsg="0" pageRef="546"/>
+								<DesignActionGotoSubpage id="564" showLoadSubpageMsg="0" showCloseSubpageMsg="0" pageRef="546"/>
 							</children>
 						</controlActions>
 					</DesignButton>
@@ -51,31 +51,32 @@ Try it for yourself!&apos;" textSize="large"/>
 			<DesignPage id="19" subPage="1" name="Capture Signature">
 				<children>
 					<DesignLabel id="394">
-						<style marginBottom="4" marginTop="4" name="Label1" text="Sign here:" textSize="large" weight="1"/>
+						<style marginBottom="4px" marginTop="4px" name="Label1" text="Sign here:" textSize="large" weight="1"/>
 					</DesignLabel>
 					<DesignSignatureField id="86" pageXML="105">
 						<style align="center" backgroundColor_x="$PERSISTENT/Root/canvas_color" name="Signature Field1" textColor_x="$PERSISTENT/Root/ink_color"/>
 						<ImgFileSettings id="87" imgSrcType="base64"/>
 					</DesignSignatureField>
 					<DesignTable id="390">
+						<style name="Table1"/>
 						<children>
 							<DesignTableCol id="391"/>
 							<DesignTableCol id="392"/>
 							<DesignTableRow id="393">
 								<children>
 									<DesignButton id="381">
-										<style align="center" backgroundColor="#D7D7DB" margin="10" multiLine="1" name="Save Button" text="Save Signature" textColor="blue" textSize="large" visible_x="string-length( $PERSISTENT/Root/temp_signature ) &gt; 0" weight="1"/>
-										<controlActions id="382" needsClient="0">
+										<style align="center" backgroundColor="#D7D7DB" margin="10px" multiLine="1" name="Save Button" text="Save Signature" textColor="blue" textSize="large" visible_x="string-length( $PERSISTENT/Root/temp_signature ) &gt; 0" weight="1"/>
+										<controlActions id="382">
 											<children>
 												<DesignActionGroupRef id="592" groupRef="130"/>
 												<DesignActionGroupRef id="589" groupRef="100"/>
-												<DesignActionReturnFromSubpage id="590" needsClient="0"/>
+												<DesignActionReturnFromSubpage id="590"/>
 											</children>
 										</controlActions>
 									</DesignButton>
 									<DesignButton id="88">
-										<style align="center" backgroundColor="#D7D7DB" margin="10" multiLine="1" name="Reject Button" text="Clear Signature" textColor="blue" textSize="large" visible_x="string-length( $PERSISTENT/Root/temp_signature ) &gt; 0" weight="1"/>
-										<controlActions id="89" needsClient="0">
+										<style align="center" backgroundColor="#D7D7DB" margin="10px" multiLine="1" name="Reject Button" text="Clear Signature" textColor="blue" textSize="large" visible_x="string-length( $PERSISTENT/Root/temp_signature ) &gt; 0" weight="1"/>
+										<controlActions id="89">
 											<children>
 												<DesignActionGroupRef id="110" groupRef="100"/>
 											</children>
@@ -92,10 +93,10 @@ Try it for yourself!&apos;" textSize="large"/>
 						<DesignActionGroupRef id="335" groupRef="333"/>
 					</children>
 				</onPageLoadActions>
-				<onBackButtonActions id="25" needsClient="0">
+				<onBackButtonActions id="25">
 					<children>
 						<DesignActionGroupRef id="113" groupRef="100"/>
-						<DesignActionReturnFromSubpage id="114" needsClient="0"/>
+						<DesignActionReturnFromSubpage id="114"/>
 					</children>
 				</onBackButtonActions>
 				<xmlRoots>
@@ -105,20 +106,20 @@ Try it for yourself!&apos;" textSize="large"/>
 			<DesignPage id="138" subPage="1" name="Review Signatures">
 				<children>
 					<DesignLabel id="352">
-						<style marginBottom="4" marginLeft="2" multiLine="1" name="Label14" text="Colors for this Device:" textSize="large" weight="1"/>
+						<style marginBottom="4px" marginLeft="2px" multiLine="1" name="Label14" text="Colors for this Device:" textSize="large" weight="1"/>
 					</DesignLabel>
 					<DesignSignatureField id="399" pageXML="105">
 						<style align="center" enabled="0" imageAntiAliasing="0" name="Signature Field 2" width="fill_parent"/>
 						<ImgFileSettings id="401" imgSrcType="base64"/>
 					</DesignSignatureField>
 					<DesignButton id="406">
-						<style align="center" backgroundColor="#D7D7DB" margin="20" name="Next Button" text="Next Signature" textColor="blue" textSize="large" visible_x="$PERSISTENT/Root/current_review &gt; 1" weight="1"/>
-						<controlActions id="407" needsClient="0">
+						<style align="center" backgroundColor="#D7D7DB" margin="20px" name="Next Button" text="Next Signature" textColor="blue" textSize="large" visible_x="$PERSISTENT/Root/current_review &gt; 1" weight="1"/>
+						<controlActions id="407">
 							<children>
 								<DesignActionGroupRef id="410" groupRef="100"/>
 								<DesignActionUpdateNode id="411" updAt="$PERSISTENT/Root/current_review" resOf="$PERSISTENT/Root/current_review - 1"/>
 								<DesignActionUpdateNode id="412" updAt="$PERSISTENT/Root/temp_signature" resOf="$XML1/collection/example[  xs:integer( $PERSISTENT/Root/current_review )   ]/signature"/>
-								<DesignActionCondition id="413" condition="$PERSISTENT/Root/current_review &gt; 1">
+								<DesignActionCondition id="413" condition="$PERSISTENT/Root/current_review &gt; 0">
 									<children>
 										<DesignActionConditionTrue id="414">
 											<children>
@@ -131,79 +132,89 @@ Try it for yourself!&apos;" textSize="large"/>
 						</controlActions>
 					</DesignButton>
 					<DesignLabel id="416">
-						<style align="center" marginTop="20" name="Label9" text_x="&apos;No more signatures on file.&apos;" textColor="red" textSize="large" underline="0" visible_x="( count($XML1/collection/example) = 1 ) or ( $PERSISTENT/Root/current_review = 1 )" weight="1"/>
-						<controlActions id="417" needsClient="0">
+						<style align="center" marginTop="20px" name="Label9" text_x="&apos;No more signatures on file.&apos;" textColor="red" textSize="large" underline="0" visible_x="( count($XML1/collection/example) = 0 ) or ( $PERSISTENT/Root/current_review = 1 )" weight="1"/>
+						<controlActions id="417">
 							<children>
 								<DesignActionGroupRef id="420" groupRef="100"/>
-								<DesignActionReturnFromSubpage id="421" needsClient="0"/>
+								<DesignActionReturnFromSubpage id="421"/>
 							</children>
 						</controlActions>
 					</DesignLabel>
 					<DesignLabel id="422">
-						<style marginBottom="4" marginLeft="2" marginTop="4" multiLine="1" name="Label15" text="Signature as Captured:" textSize="large" visible_x="( $PERSISTENT/Root/current_review &gt; 1 )" weight="1"/>
+						<style marginBottom="4px" marginLeft="2px" marginTop="4px" multiLine="1" name="Label15" text="Signature as Captured:" textSize="large" visible_x="( $PERSISTENT/Root/current_review &gt; 0 )" weight="1"/>
 					</DesignLabel>
 					<DesignTable id="165">
-						<style visible_x="( $PERSISTENT/Root/current_review &gt; 1 )"/>
+						<style name="Table1" visible_x="( $PERSISTENT/Root/current_review &gt; 0 )"/>
 						<children>
 							<DesignTableCol id="166"/>
 							<DesignTableCol id="167"/>
 							<DesignTableRow id="168">
 								<children>
 									<DesignLabel id="169">
-										<style marginBottom="2" name="Label1" text="Platform"/>
+										<style marginBottom="2px" name="Label1" text="Platform"/>
 									</DesignLabel>
 									<DesignLabel id="159">
-										<style align="center" marginBottom="2" name="Label5" text_x="$XML1/collection/example[  xs:integer( $PERSISTENT/Root/current_review )   ]/device_platform"/>
+										<style align="center" marginBottom="2px" name="Label5" text_x="$XML1/collection/example[  xs:integer( $PERSISTENT/Root/current_review )   ]/device_platform"/>
 									</DesignLabel>
 								</children>
 							</DesignTableRow>
 							<DesignTableRow id="176">
 								<children>
 									<DesignLabel id="177">
-										<style marginBottom="2" name="Label2" text="Orientation"/>
+										<style marginBottom="2px" name="Label2" text="Orientation"/>
 									</DesignLabel>
 									<DesignLabel id="160">
-										<style align="center" marginBottom="2" name="Label6" text_x="$XML1/collection/example[  xs:integer( $PERSISTENT/Root/current_review )  ] /current_orientation"/>
+										<style align="center" marginBottom="2px" name="Label6" text_x="$XML1/collection/example[  xs:integer( $PERSISTENT/Root/current_review )  ] /current_orientation"/>
 									</DesignLabel>
 								</children>
 							</DesignTableRow>
 							<DesignTableRow id="184">
 								<children>
 									<DesignLabel id="185">
-										<style marginBottom="2" name="Label3" text="Device X dimension"/>
+										<style marginBottom="2px" name="Label3" text="Device X dimension"/>
 									</DesignLabel>
 									<DesignLabel id="161">
-										<style align="center" marginBottom="2" name="Label7" text_x="$XML1/collection/example[  xs:integer( $PERSISTENT/Root/current_review )   ] /device_X_dimension"/>
+										<style align="center" marginBottom="2px" name="Label7" text_x="$XML1/collection/example[  xs:integer( $PERSISTENT/Root/current_review )   ] /device_X_dimension"/>
 									</DesignLabel>
 								</children>
 							</DesignTableRow>
 							<DesignTableRow id="192">
 								<children>
 									<DesignLabel id="193">
-										<style marginBottom="2" name="Label4" text="Device Y dimension"/>
+										<style marginBottom="2px" name="Label4" text="Device Y dimension"/>
 									</DesignLabel>
 									<DesignLabel id="162">
-										<style align="center" marginBottom="2" name="Label8" text_x="$XML1/collection/example[ xs:integer( $PERSISTENT/Root/current_review )      ]/device_Y_dimension"/>
+										<style align="center" marginBottom="2px" name="Label8" text_x="$XML1/collection/example[ xs:integer( $PERSISTENT/Root/current_review )      ]/device_Y_dimension"/>
 									</DesignLabel>
 								</children>
 							</DesignTableRow>
 							<DesignTableRow id="280">
 								<children>
 									<DesignLabel id="281">
-										<style marginBottom="2" name="Label10" text="Background Color"/>
+										<style marginBottom="2px" name="Label10" text="Background Color"/>
 									</DesignLabel>
 									<DesignLabel id="299">
-										<style align="center" marginBottom="2" name="Label12" text_x="$XML1/collection/example[ xs:integer( $PERSISTENT/Root/current_review )       ]/captured_block_color"/>
+										<style align="center" marginBottom="2px" name="Label12" text_x="$XML1/collection/example[ xs:integer( $PERSISTENT/Root/current_review )       ]/captured_block_color"/>
 									</DesignLabel>
 								</children>
 							</DesignTableRow>
 							<DesignTableRow id="286">
 								<children>
 									<DesignLabel id="287">
-										<style marginBottom="2" name="Label11" text="Foreground Color"/>
+										<style marginBottom="2px" name="Label11" text="Foreground Color"/>
 									</DesignLabel>
 									<DesignLabel id="300">
-										<style align="center" marginBottom="2" name="Label13" text_x="$XML1/collection/example[ xs:integer( $PERSISTENT/Root/current_review )      ]/captured_signature_color"/>
+										<style align="center" marginBottom="2px" name="Label13" text_x="$XML1/collection/example[ xs:integer( $PERSISTENT/Root/current_review )      ]/captured_signature_color"/>
+									</DesignLabel>
+								</children>
+							</DesignTableRow>
+							<DesignTableRow id="652">
+								<children>
+									<DesignLabel id="648">
+										<style marginBottom="2px" name="Label16" text="Capture Date"/>
+									</DesignLabel>
+									<DesignLabel id="650">
+										<style align="center" dtFormat="[M]-[D]-[Y]" marginBottom="2px" name="Label17" text_x="$XML1/collection/example[ xs:integer( $PERSISTENT/Root/current_review )      ]/capture_date"/>
 									</DesignLabel>
 								</children>
 							</DesignTableRow>
@@ -213,14 +224,14 @@ Try it for yourself!&apos;" textSize="large"/>
 						<style name="Space1"/>
 					</DesignVSpace>
 					<DesignSignatureField id="355" pageXML="363">
-						<style align="center" enabled="0" imageAntiAliasing="0" name="Signature Field 3" visible_x="( $PERSISTENT/Root/current_review &gt; 1 )" width="fill_parent"/>
+						<style align="center" enabled="0" imageAntiAliasing="0" name="Signature Field 3" visible_x="( $PERSISTENT/Root/current_review &gt; 0 )" width="fill_parent"/>
 						<ImgFileSettings id="357" imgSrcType="base64"/>
 					</DesignSignatureField>
 				</children>
 				<onPageLoadActions id="178">
 					<children>
-						<DesignActionLoadSaveFile id="376" xmlRootRef="102">
-							<FileSettings so="1" id="377" url="signatures.xml" deployable_so="228"/>
+						<DesignActionLoadSaveFile id="376" needsServer="1" xmlRootRef="102">
+							<FileSettings so="1" id="377" url="signatures_file.xml" deployable_so="614" createDirs="0"/>
 						</DesignActionLoadSaveFile>
 						<DesignActionGroupRef id="613" groupRef="238"/>
 						<DesignActionUpdateNode id="611" updAt="$PERSISTENT/Root/current_review" resOf="$PERSISTENT/Root/signatures_count"/>
@@ -230,10 +241,38 @@ $PERSISTENT/Root/raw_signature_for_display" resOf="$XML1/collection/example[last
 						<DesignActionGroupRef id="315" groupRef="294"/>
 					</children>
 				</onPageLoadActions>
-				<onBackButtonActions id="149" needsClient="0">
+				<onBackButtonActions id="149">
 					<children>
 						<DesignActionGroupRef id="150" groupRef="100"/>
-						<DesignActionReturnFromSubpage id="151" needsClient="0"/>
+						<DesignActionCondition id="645" condition="$PERSISTENT/Root/Custom_F_choice = &apos;default&apos;">
+							<children>
+								<DesignActionConditionTrue id="646">
+									<children>
+										<DesignActionUpdateNode id="629" updAt="$PERSISTENT/Root/ink_color" resOf="$PERSISTENT/Root/device_signature_color"/>
+									</children>
+								</DesignActionConditionTrue>
+								<DesignActionConditionFalse id="647">
+									<children>
+										<DesignActionUpdateNode id="630" updAt="$PERSISTENT/Root/ink_color" resOf="$PERSISTENT/Root/Custom_F_choice"/>
+									</children>
+								</DesignActionConditionFalse>
+							</children>
+						</DesignActionCondition>
+						<DesignActionCondition id="640" condition="$PERSISTENT/Root/Custom_B_choice = &apos;default&apos;">
+							<children>
+								<DesignActionConditionTrue id="641">
+									<children>
+										<DesignActionUpdateNode id="642" updAt="$PERSISTENT/Root/canvas_color" resOf="$PERSISTENT/Root/device_block_color"/>
+									</children>
+								</DesignActionConditionTrue>
+								<DesignActionConditionFalse id="643">
+									<children>
+										<DesignActionUpdateNode id="644" updAt="$PERSISTENT/Root/canvas_color" resOf="$PERSISTENT/Root/Custom_B_choice"/>
+									</children>
+								</DesignActionConditionFalse>
+							</children>
+						</DesignActionCondition>
+						<DesignActionReturnFromSubpage id="635"/>
 					</children>
 				</onBackButtonActions>
 				<xmlRoots>
@@ -243,16 +282,17 @@ $PERSISTENT/Root/raw_signature_for_display" resOf="$XML1/collection/example[last
 			<DesignPage id="546" subPage="1" name="Customize Colors">
 				<children>
 					<DesignLabel id="605">
-						<style margin="4" marginBottom="8" multiLine="1" name="Label4" text="Choose colors for new captured signatures:"/>
+						<style margin="4px" marginBottom="8px" multiLine="1" name="Label4" text="Choose colors for new captured signatures:"/>
 					</DesignLabel>
 					<DesignTable id="512">
+						<style name="Table1"/>
 						<children>
 							<DesignTableCol id="513">
-								<style colWidth="40"/>
+								<style colWidth="40%"/>
 							</DesignTableCol>
 							<DesignTableCol id="514"/>
 							<DesignTableCol id="515">
-								<style colWidth="40"/>
+								<style colWidth="40%"/>
 							</DesignTableCol>
 							<DesignTableRow id="573">
 								<children>
@@ -268,8 +308,8 @@ $PERSISTENT/Root/raw_signature_for_display" resOf="$XML1/collection/example[last
 							<DesignTableRow id="516">
 								<children>
 									<DesignCombo id="517" pageXML="430" comboEntryVisValues="1">
-										<style align="center" marginBottom="6" marginTop="6" multiLine="1" name="Combo Box1"/>
-										<controlActions id="518" needsClient="0">
+										<style align="center" marginBottom="6px" marginTop="6px" multiLine="1" name="Combo Box1"/>
+										<controlActions id="518">
 											<children>
 												<DesignActionCondition id="519" condition="$PERSISTENT/Root/Custom_B_choice = &apos;default&apos;">
 													<children>
@@ -300,8 +340,8 @@ $PERSISTENT/Root/raw_signature_for_display" resOf="$XML1/collection/example[last
 									</DesignCombo>
 									<DesignTableCellEmpty id="528"/>
 									<DesignCombo id="529" pageXML="447" comboEntryVisValues="1">
-										<style align="center" marginBottom="6" marginTop="6" multiLine="1" name="Combo Box2"/>
-										<controlActions id="530" needsClient="0">
+										<style align="center" marginBottom="6px" marginTop="6px" multiLine="1" name="Combo Box2"/>
+										<controlActions id="530">
 											<children>
 												<DesignActionCondition id="531" condition="$PERSISTENT/Root/Custom_F_choice = &apos;default&apos;">
 													<children>
@@ -335,44 +375,44 @@ $PERSISTENT/Root/raw_signature_for_display" resOf="$XML1/collection/example[last
 							<DesignTableRow id="540">
 								<children>
 									<DesignHLine id="541">
-										<style lcLineWidth="50" lineColor_x="if 
+										<style lcLineWidth="50px" lineColor_x="if 
 ( $PERSISTENT/Root/Custom_B_choice = &apos;default&apos; ) 
 then 
 $PERSISTENT/Root/device_block_color 
 else 
-$PERSISTENT/Root/Custom_B_choice" marginBottom="6" marginTop="6" name="Horizontal Line1"/>
+$PERSISTENT/Root/Custom_B_choice" marginBottom="6px" marginTop="6px" name="Horizontal Line1"/>
 									</DesignHLine>
 									<DesignTableCellEmpty id="543"/>
 									<DesignHLine id="544">
-										<style lcLineWidth="50" lineColor_x="if 
+										<style lcLineWidth="50px" lineColor_x="if 
 ( $PERSISTENT/Root/Custom_F_choice = &apos;default&apos; ) 
 then 
 $PERSISTENT/Root/device_signature_color 
 else 
-$PERSISTENT/Root/Custom_F_choice" marginBottom="6" marginTop="6" name="Horizontal Line2"/>
+$PERSISTENT/Root/Custom_F_choice" marginBottom="6px" marginTop="6px" name="Horizontal Line2"/>
 									</DesignHLine>
 								</children>
 							</DesignTableRow>
 						</children>
 					</DesignTable>
 				</children>
-				<onBackButtonActions id="554" needsClient="0">
+				<onBackButtonActions id="554">
 					<children>
 						<DesignActionCondition id="602" condition="$PERSISTENT/Root/canvas_color = 
 $PERSISTENT/Root/ink_color">
 							<children>
 								<DesignActionConditionTrue id="603">
 									<children>
-										<DesignActionMessageBox id="600" needsClient="0" msgBoxTitle="&apos;Colors match&apos;" msgBoxMsg="&apos;Please choose different a color for Ink or Canvas&apos;">
+										<DesignActionMessageBox id="600" msgBoxTitle="&apos;Colors match&apos;" msgBoxMsg="&apos;Please choose different a color for Ink or Canvas&apos;">
 											<children>
-												<DesignActionMessageBoxButton id="601" needsClient="0"/>
+												<DesignActionMessageBoxButton id="601"/>
 											</children>
 										</DesignActionMessageBox>
 									</children>
 								</DesignActionConditionTrue>
 								<DesignActionConditionFalse id="604">
 									<children>
-										<DesignActionReturnFromSubpage id="599" needsClient="0"/>
+										<DesignActionReturnFromSubpage id="599"/>
 									</children>
 								</DesignActionConditionFalse>
 							</children>
@@ -388,19 +428,23 @@ $PERSISTENT/Root/ink_color">
 				<children>
 					<DesignActionUpdateNode id="196" updAt="$PERSISTENT/Root/device_platform" resOf="if ( $MT_Android ) then &apos;Android&apos; 
 else if ( $MT_iOS ) then &apos;iOS&apos;
-else if ($MT_Windows) then &apos;Windows App&apos;
 else if ($MT_WindowsPhone) then &apos;Windows Phone&apos;
+else if ($MT_Windows) then &apos;Windows App&apos;
 else if ( $MT_Browser ) then &apos;Web Browser&apos;
 else &apos;Unknown&apos;"/>
 					<DesignActionUpdateNode id="117" updAt="$PERSISTENT/Root/device_X_dimension" resOf="$MT_CanvasX"/>
 					<DesignActionUpdateNode id="118" updAt="$PERSISTENT/Root/device_Y_dimension" resOf="$MT_CanvasY"/>
+					<DesignActionUpdateNode id="617" updAt="$PERSISTENT/Root/device_block_color,
+$PERSISTENT/Root/canvas_color" resOf="mt-invert-color( $MT_PageBackgroundColor )"/>
+					<DesignActionUpdateNode id="618" updAt="$PERSISTENT/Root/device_signature_color,
+$PERSISTENT/Root/ink_color" resOf="$MT_PageBackgroundColor"/>
+					<DesignActionUpdateNode id="619" updAt="$PERSISTENT/Root/Custom_B_choice,
+$PERSISTENT/Root/Custom_F_choice" resOf="&apos;default&apos;"/>
 				</children>
 			</DesignActionGroup>
 			<DesignActionGroup id="333" name="Get Page Info">
 				<children>
 					<DesignActionUpdateNode id="330" updAt="$PERSISTENT/Root/current_orientation" resOf="if ($MT_Portrait) then &apos;Portrait&apos; else &apos;Landscape&apos;"/>
-					<DesignActionUpdateNode id="331" updAt="$PERSISTENT/Root/captured_signature_color, $PERSISTENT/Root/device_signature_color" resOf="$MT_PageBackgroundColor"/>
-					<DesignActionUpdateNode id="332" updAt="$PERSISTENT/Root/captured_block_color, $PERSISTENT/Root/device_block_color" resOf="mt-invert-color( $MT_PageBackgroundColor )"/>
 				</children>
 			</DesignActionGroup>
 			<DesignActionGroup id="100" name="Erase Signature">
@@ -413,19 +457,21 @@ $PERSISTENT/Root/current_orientation" resOf="&apos;&apos;"/>
 			<DesignActionGroup id="130" name="Save Signature">
 				<children>
 					<DesignActionUpdateNode id="378" updAt="$PERSISTENT/Root/current_orientation" resOf="if ($MT_Portrait) then &apos;Portrait&apos; else &apos;Landscape&apos;"/>
-					<DesignActionLoadSaveFile id="379" xmlRootRef="102">
-						<FileSettings so="1" id="380" url="signatures.xml" deployable_so="228"/>
+					<DesignActionLoadSaveFile id="379" needsServer="1" xmlRootRef="102">
+						<FileSettings so="1" id="380" url="signatures_file.xml" deployable_so="614" createDirs="0"/>
 					</DesignActionLoadSaveFile>
-					<DesignActionAppendNode id="131" appAt="$XML1/collection" resOf="$XML1/collection/example[1]"/>
-					<DesignActionUpdateNode id="132" updAt="$XML1/collection/example[last()]/signature" resOf="$PERSISTENT/Root/temp_signature"/>
-					<DesignActionUpdateNode id="133" updAt="$XML1/collection/example[last()]/device_platform" resOf="$PERSISTENT/Root/device_platform"/>
-					<DesignActionUpdateNode id="134" updAt="$XML1/collection/example[last()]/current_orientation" resOf="$PERSISTENT/Root/current_orientation"/>
-					<DesignActionUpdateNode id="128" updAt="$XML1/collection/example[last()]/device_X_dimension" resOf="$PERSISTENT/Root/device_X_dimension"/>
-					<DesignActionUpdateNode id="127" updAt="$XML1/collection/example[last()]/device_Y_dimension" resOf="$PERSISTENT/Root/device_Y_dimension"/>
-					<DesignActionUpdateNode id="298" updAt="$XML1/collection/example[ last() ]/captured_signature_color" resOf="$PERSISTENT/Root/ink_color"/>
-					<DesignActionUpdateNode id="329" updAt="$XML1/collection/example[ last() ]/captured_block_color" resOf="$PERSISTENT/Root/canvas_color"/>
-					<DesignActionLoadSaveFile id="226" xmlRootRef="102" load="0">
-						<FileSettings so="1" id="227" url="signatures.xml"/>
+					<DesignActionAppendNode id="131" appAt="$XML1/collection" resOf="&lt;example&gt;
+&lt;signature&gt;{ data($PERSISTENT/Root/temp_signature) }&lt;/signature&gt;
+{ $PERSISTENT/Root/device_platform }
+{ $PERSISTENT/Root/current_orientation }
+{ $PERSISTENT/Root/device_X_dimension }
+{ $PERSISTENT/Root/device_Y_dimension }
+&lt;captured_signature_color&gt;{ data($PERSISTENT/Root/ink_color) }&lt;/captured_signature_color&gt; 
+&lt;captured_block_color&gt;{ data($PERSISTENT/Root/canvas_color) }&lt;/captured_block_color&gt;
+&lt;capture_date&gt;{ current-date-no-TZ() }&lt;/capture_date&gt;
+&lt;/example&gt;"/>
+					<DesignActionLoadSaveFile id="226" needsServer="1" xmlRootRef="102" load="0">
+						<FileSettings so="1" id="227" url="signatures_file.xml"/>
 					</DesignActionLoadSaveFile>
 				</children>
 			</DesignActionGroup>
@@ -436,7 +482,7 @@ $PERSISTENT/Root/current_orientation" resOf="&apos;&apos;"/>
 			</DesignActionGroup>
 			<DesignActionGroup id="294" name="Set Review Colors">
 				<children>
-					<DesignActionCondition id="368" condition="$PERSISTENT/Root/current_review &gt; 1">
+					<DesignActionCondition id="368" condition="$PERSISTENT/Root/current_review &gt; 0">
 						<children>
 							<DesignActionConditionTrue id="369">
 								<children>
@@ -474,8 +520,6 @@ $PERSISTENT/Root/quality_factor )"/>
 $PERSISTENT/Root/canvas_color" resOf="mt-invert-color( $MT_PageBackgroundColor )"/>
 					<DesignActionUpdateNode id="500" updAt="$PERSISTENT/Root/device_signature_color,
 $PERSISTENT/Root/ink_color" resOf="$MT_PageBackgroundColor"/>
-					<DesignActionUpdateNode id="609" updAt="$PERSISTENT/Root/Custom_B_choice,
-$PERSISTENT/Root/Custom_F_choice" resOf="&apos;default&apos;"/>
 				</children>
 			</DesignActionGroup>
 		</children>
@@ -497,16 +541,14 @@ $PERSISTENT/Root/Custom_F_choice" resOf="&apos;default&apos;"/>
 		<children>
 			<PageXMLElement id="40" name="Root">
 				<children>
-					<PageXMLElement id="105" name="temp_signature" mustExist="1" default="&apos;&apos;"/>
-					<PageXMLElement id="363" name="raw_signature_for_display" mustExist="1"/>
 					<PageXMLElement id="106" name="device_platform" mustExist="1"/>
-					<PageXMLElement id="107" name="current_orientation" mustExist="1"/>
 					<PageXMLElement id="108" name="device_X_dimension" mustExist="1"/>
 					<PageXMLElement id="109" name="device_Y_dimension" mustExist="1"/>
-					<PageXMLElement id="224" name="captured_signature_color" mustExist="1"/>
-					<PageXMLElement id="225" name="captured_block_color" mustExist="1"/>
 					<PageXMLElement id="308" name="device_signature_color" mustExist="1"/>
 					<PageXMLElement id="309" name="device_block_color" mustExist="1"/>
+					<PageXMLElement id="107" name="current_orientation" mustExist="1"/>
+					<PageXMLElement id="105" name="temp_signature" mustExist="1" default="&apos;&apos;"/>
+					<PageXMLElement id="363" name="raw_signature_for_display" mustExist="1"/>
 					<PageXMLElement id="240" name="signatures_count" mustExist="1" default="1"/>
 					<PageXMLElement id="241" name="current_review" mustExist="1" default="1"/>
 					<PageXMLElement id="404" name="quality_factor" mustExist="1" default="100"/>
@@ -522,23 +564,9 @@ $PERSISTENT/Root/Custom_F_choice" resOf="&apos;default&apos;"/>
 		<children>
 			<PageXMLRootXML id="102" name="XML1" hasUrl="1">
 				<children>
-					<PageXMLElement id="120" name="collection">
-						<children>
-							<PageXMLElement id="121" name="example">
-								<children>
-									<PageXMLElement id="122" name="signature" mustExist="1"/>
-									<PageXMLElement id="123" name="device_platform" mustExist="1"/>
-									<PageXMLElement id="124" name="current_orientation" mustExist="1"/>
-									<PageXMLElement id="125" name="device_X_dimension" mustExist="1"/>
-									<PageXMLElement id="126" name="device_Y_dimension" mustExist="1"/>
-									<PageXMLElement id="295" name="captured_signature_color" mustExist="1"/>
-									<PageXMLElement id="296" name="captured_block_color" mustExist="1"/>
-								</children>
-							</PageXMLElement>
-						</children>
-					</PageXMLElement>
+					<PageXMLElement id="120" name="collection"/>
 				</children>
-				<DefaultFile so="1" id="189" url="signatures.xml" deployable_so="228"/>
+				<DefaultFile so="1" id="189" url="signatures_file.xml" deployable_so="614"/>
 			</PageXMLRootXML>
 		</children>
 	</PageXMLRoots>
@@ -590,11 +618,12 @@ $PERSISTENT/Root/Custom_F_choice" resOf="&apos;default&apos;"/>
 			<GlobalVariable id="80" sysVar="MT_InputParameters"/>
 			<GlobalVariable id="81" sysVar="MT_HTTPExecute_Result"/>
 			<GlobalVariable id="82" sysVar="MT_ServerConnectionErrorLocation"/>
+			<GlobalVariable id="242" sysVar="MT_IsAppStoreApp"/>
 		</children>
 	</GlobalVariables>
 	<DeployableFiles so="1" id="194">
 		<children>
-			<DeployableFile id="228" deploy="1"/>
+			<DeployableFile id="614" deploy="1"/>
 		</children>
 	</DeployableFiles>
 	<CustomerAppSettings so="1" id="32"/>
