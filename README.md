@@ -1,4 +1,6 @@
 # MobileTogether-signature-capture
+Latest update simplifies the Save Signature action Group with one XQuery Constructor replacing 8 previous actions. Also added a metadata field to record signture date and removed unneeded data structures.
+
 Example app to demonstrate the use of signature capture controls and related XPath functions in MobileTogether
 
 The app collects signatures from mobile devices and records them in a file stored on your MobileTogether Server, then lets users review them on the mobile device. The app demonstrates how to resize and standardize signature colors for review even if they were captured on a different platform.
