@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<MobileTogetherDesign versionClient="51" versionServer="51" deploymentPath_so="/public/Signatures App" deploymentDescription_so="60510 16:41 This app collects and records signatures in a file stored on your MobileTogether Server and lets users review them on the mobile device. The app demonstrates how to resize and standardize signature colors for review even if they were captured on a different platform." deploymentGlobalResourceConfig_so="Default">
+<MobileTogetherDesign versionClient="51" versionServer="51" deploymentPath_so="/public/Signatures App" deploymentDescription_so="60519 13:57 --  This app collects and records signatures in a file stored on your MobileTogether Server and lets users review them on the mobile device. The app demonstrates how to resize and standardize signature colors for review even if they were captured on a different platform." deploymentGlobalResourceConfig_so="Default">
 	<DesignRoot id="6">
 		<style workflowIcon="sign.png"/>
 		<children>
@@ -22,18 +22,10 @@ Try it for yourself!&apos;" textSize="large"/>
 						</controlActions>
 					</DesignButton>
 					<DesignButton id="4">
-						<style align="center" backgroundColor="#D7D7DB" margin="20px" name="Review Button" text="Review Signatures" textColor="blue" textSize="large" weight="1"/>
+						<style align="center" backgroundColor="#D7D7DB" margin="20px" name="Review Button" text="View Signatures" textColor="blue" textSize="large" weight="1"/>
 						<controlActions id="5">
 							<children>
 								<DesignActionGotoSubpage id="247" showLoadSubpageMsg="0" showCloseSubpageMsg="0" pageRef="138"/>
-							</children>
-						</controlActions>
-					</DesignButton>
-					<DesignButton id="557">
-						<style align="center" backgroundColor="#D7D7DB" margin="20px" name="Review Button1" text="Customize Colors" textColor="blue" textSize="large" weight="1"/>
-						<controlActions id="558">
-							<children>
-								<DesignActionGotoSubpage id="564" showLoadSubpageMsg="0" showCloseSubpageMsg="0" pageRef="546"/>
 							</children>
 						</controlActions>
 					</DesignButton>
@@ -58,14 +50,14 @@ Try it for yourself!&apos;" textSize="large"/>
 						<ImgFileSettings id="87" imgSrcType="base64"/>
 					</DesignSignatureField>
 					<DesignTable id="390">
-						<style name="Table1"/>
+						<style name="Table1" visible_x="string-length( $PERSISTENT/Root/temp_signature ) &gt; 0"/>
 						<children>
 							<DesignTableCol id="391"/>
 							<DesignTableCol id="392"/>
 							<DesignTableRow id="393">
 								<children>
 									<DesignButton id="381">
-										<style align="center" backgroundColor="#D7D7DB" margin="10px" multiLine="1" name="Save Button" text="Save Signature" textColor="blue" textSize="large" visible_x="string-length( $PERSISTENT/Root/temp_signature ) &gt; 0" weight="1"/>
+										<style align="center" backgroundColor="#D7D7DB" margin="10px" multiLine="1" name="Save Button" text="Save Signature" textColor="blue" textSize="large" weight="1"/>
 										<controlActions id="382">
 											<children>
 												<DesignActionGroupRef id="592" groupRef="130"/>
@@ -75,7 +67,7 @@ Try it for yourself!&apos;" textSize="large"/>
 										</controlActions>
 									</DesignButton>
 									<DesignButton id="88">
-										<style align="center" backgroundColor="#D7D7DB" margin="10px" multiLine="1" name="Reject Button" text="Clear Signature" textColor="blue" textSize="large" visible_x="string-length( $PERSISTENT/Root/temp_signature ) &gt; 0" weight="1"/>
+										<style align="center" backgroundColor="#D7D7DB" margin="10px" multiLine="1" name="Reject Button" text="Clear Signature" textColor="blue" textSize="large" weight="1"/>
 										<controlActions id="89">
 											<children>
 												<DesignActionGroupRef id="110" groupRef="100"/>
@@ -86,6 +78,14 @@ Try it for yourself!&apos;" textSize="large"/>
 							</DesignTableRow>
 						</children>
 					</DesignTable>
+					<DesignButton id="653">
+						<style align="center" backgroundColor="#D7D7DB" margin="20px" name="Customize Colors Button" text="Customize Colors" textColor="blue" textSize="large" visible_x="string-length( $PERSISTENT/Root/temp_signature ) = 0" weight="1"/>
+						<controlActions id="654">
+							<children>
+								<DesignActionGotoSubpage id="657" showLoadSubpageMsg="0" showCloseSubpageMsg="0" pageRef="546"/>
+							</children>
+						</controlActions>
+					</DesignButton>
 				</children>
 				<onPageLoadActions id="23">
 					<children>
@@ -231,7 +231,7 @@ Try it for yourself!&apos;" textSize="large"/>
 				<onPageLoadActions id="178">
 					<children>
 						<DesignActionLoadSaveFile id="376" needsServer="1" xmlRootRef="102">
-							<FileSettings so="1" id="377" url="signatures_file.xml" deployable_so="614" createDirs="0"/>
+							<FileSettings so="1" id="377" url="signatures_file.xml" deployable_so="658" createDirs="0"/>
 						</DesignActionLoadSaveFile>
 						<DesignActionGroupRef id="613" groupRef="238"/>
 						<DesignActionUpdateNode id="611" updAt="$PERSISTENT/Root/current_review" resOf="$PERSISTENT/Root/signatures_count"/>
@@ -458,7 +458,7 @@ $PERSISTENT/Root/current_orientation" resOf="&apos;&apos;"/>
 				<children>
 					<DesignActionUpdateNode id="378" updAt="$PERSISTENT/Root/current_orientation" resOf="if ($MT_Portrait) then &apos;Portrait&apos; else &apos;Landscape&apos;"/>
 					<DesignActionLoadSaveFile id="379" needsServer="1" xmlRootRef="102">
-						<FileSettings so="1" id="380" url="signatures_file.xml" deployable_so="614" createDirs="0"/>
+						<FileSettings so="1" id="380" url="signatures_file.xml" deployable_so="658" createDirs="0"/>
 					</DesignActionLoadSaveFile>
 					<DesignActionAppendNode id="131" appAt="$XML1/collection" resOf="&lt;example&gt;
 &lt;signature&gt;{ data($PERSISTENT/Root/temp_signature) }&lt;/signature&gt;
@@ -566,7 +566,7 @@ $PERSISTENT/Root/ink_color" resOf="$MT_PageBackgroundColor"/>
 				<children>
 					<PageXMLElement id="120" name="collection"/>
 				</children>
-				<DefaultFile so="1" id="189" url="signatures_file.xml" deployable_so="614"/>
+				<DefaultFile so="1" id="189" url="signatures_file.xml" deployable_so="658" createDirs="0"/>
 			</PageXMLRootXML>
 		</children>
 	</PageXMLRoots>
@@ -623,7 +623,7 @@ $PERSISTENT/Root/ink_color" resOf="$MT_PageBackgroundColor"/>
 	</GlobalVariables>
 	<DeployableFiles so="1" id="194">
 		<children>
-			<DeployableFile id="614" deploy="1"/>
+			<DeployableFile id="658"/>
 		</children>
 	</DeployableFiles>
 	<CustomerAppSettings so="1" id="32"/>
